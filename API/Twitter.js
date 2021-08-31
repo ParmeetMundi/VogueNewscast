@@ -20,15 +20,15 @@ const Twitter = () => {
 const getTweets=(T)=>{
     try{
 
-       for(var i=0;i<Trends.length;i++){
-        T.get('search/tweets',{q:Trends[i].name,result_type:'popular',count:'5'},
+       for(var i=0;i<1;i++){
+        T.get('search/tweets',{q:Trends[i].name,result_type:'popular',count:'2'},
         (err,data,res)=>{
             var tweetIds=[]
-            console.log(data)
-            // for(var j=0;j<(data[0].statuses).length;j++){
-            //     //tweetIds.push((data.statuses[i]).id_str)
-            //     console.log(data[0].statuses[j])
-            // }
+            const tweets=data.statuses
+
+             for(var j=0;j<tweets.length;j++){
+                 tweetIds.push(tweets[j].id_str)
+             }
             //console.log(tweetIds)
             
         })
