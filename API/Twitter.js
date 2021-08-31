@@ -1,6 +1,6 @@
 import Twit from 'twit'
-import { franc } from 'franc'
 import Trends from '../Trends.js'
+import Tweet from '../Schemas/tweets.js'
 
 const Twitter = () => {
 
@@ -13,6 +13,7 @@ const Twitter = () => {
     
     getTrends(T)
     setInterval(()=>getTrends(T),1000*60*60) 
+    setInterval(()=>getTweets(T),1000*60*60) 
    
 
 }
@@ -20,17 +21,20 @@ const Twitter = () => {
 const getTweets=(T)=>{
     try{
 
-       for(var i=0;i<1;i++){
-        T.get('search/tweets',{q:Trends[i].name,result_type:'popular',count:'2'},
-        (err,data,res)=>{
+       for(var i=0;i<Trends.length;i++){
+        T.get('search/tweets',{q:Trends[i].name,result_type:'popular',count:'5'},
+        async (err,data,res)=>{
             var tweetIds=[]
             const tweets=data.statuses
 
              for(var j=0;j<tweets.length;j++){
                  tweetIds.push(tweets[j].id_str)
              }
-            //console.log(tweetIds)
+           
+           await  Tweet.updateOne({"hashtag":Trends[i].name},{ "hashtag":Trends[i].name,
+            "ids":tweetIds},{upsert:true})
             
+
         })
        }
        

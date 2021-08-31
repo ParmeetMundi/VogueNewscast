@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
 
-const tweets=mongoose.Schema({
+const Tweet=mongoose.Schema({
         hashtag:{
             type:String,
             required:true,
             unique:true
         },
-        ids=[]
+        ids:[]
 })
 
 
 
 
-export default tweets
+export default mongoose.model("Tweet",Tweet)
