@@ -1,0 +1,1 @@
+{"type":"module","name":"vogue-newscast","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","start":"node index.js"},"author":"ParmeetMundi","license":"ISC","dependencies":{"express":"^4.17.1","franc":"^6.0.0","giphy-api":"^2.0.2","mongoose":"^6.0.1","twit":"^2.2.11"}}
