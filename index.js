@@ -8,7 +8,7 @@ app.use(express.json())
 const port=process.env.PORT||8080
 const mongodbUrl=""
 //Twitter()
-Giphy()
+//Giphy()
 
 // mongoose.connect(mongodbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 // const db=mongoose.connection;
