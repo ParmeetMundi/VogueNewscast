@@ -17,35 +17,25 @@ function App() {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        //display: 'flex'
+        // alignItems: 'center',
+        //justifyContent: 'center'
       }}
     >
       
       <Navbar />
-
+      <li className="lil"></li>
       <p>
       <GlassCardTwitter />
-      <li></li>
-      <li></li>
-      <GlassCardGiphy /> </p>
-      <li></li>
-      <li></li>
-      <p>
+      <GlassCardGiphy />
       <GlassCardYoutube />
-      <li></li>
-      {/* <li></li>
-      <GlassCardTwitter /> </p>
-      <li></li>
-      <li></li>
+      </p>
+      <li className="lil"></li>
       <p>
+      <GlassCardTwitter /> 
       <GlassCardGiphy /> 
-      <li></li>
-      <li></li>
       <GlassCardYoutube />
-      </p> */}
-      
+      </p>
     </div>
   );
 }

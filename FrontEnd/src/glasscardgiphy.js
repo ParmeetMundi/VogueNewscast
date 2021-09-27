@@ -14,6 +14,7 @@ backdrop-filter: blur(10px);
 border: 2px solid transparent;
 background-clip: border-box;
 cursor: pointer;
+margin: 2em;
 `;
 
 /*const StyledImg = styled.img`
