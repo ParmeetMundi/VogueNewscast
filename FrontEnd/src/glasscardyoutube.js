@@ -2,6 +2,7 @@ import React from 'react';
 import profile from './images/back.jpg';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
+import { Timeline, Tweet } from 'react-twitter-widgets';
 
 const Container = styled(animated.div)`
 display: inline-block;
@@ -54,8 +55,10 @@ const GlassCardYoutube = () => {
             }}
         >
             
-            <StyledH1>Youtube</StyledH1>
-            <StyledH3>Trending Videos<br/> Likes and Comments </StyledH3>
+            <StyledH1><div className="rahul">
+                <Tweet tweetId="1442186834918793225" />
+                </div></StyledH1>
+           
         </Container>
     );
 }

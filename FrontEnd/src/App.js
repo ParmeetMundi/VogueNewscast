@@ -24,18 +24,18 @@ function App() {
     >
       
       <Navbar />
-      <li className="lil"></li>
+   
       <p>
       <GlassCardTwitter />
       <GlassCardGiphy />
       <GlassCardYoutube />
       </p>
-      <li className="lil"></li>
+      {/* <li className="lil"></li>
       <p>
       <GlassCardTwitter /> 
       <GlassCardGiphy /> 
       <GlassCardYoutube />
-      </p>
+      </p> */}
     </div>
   );
 }
