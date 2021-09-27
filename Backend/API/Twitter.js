@@ -30,6 +30,7 @@ const getTweets=(T)=>{
 
              for(var j=0;j<Twittertweets.length;j++){
                  tweetIds.push(Twittertweets[j].id_str)
+               //  console.log(Twittertweets[j].id_str)
              }
            
            await  Tweet.updateOne({"hashtag":Trends[i].name},{ "hashtag":Trends[i].name,

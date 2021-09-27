@@ -18,13 +18,13 @@ const getStickers=async (G)=>{
        for(var i=0;i<2;i++)
        {   var urls=[]
            await G.search({q:Trends[i],limit:'2'},(err,res)=>{
-                console.log(res)
-                // for(var j=0;j<(res.data).length;j++){
-                //     console.log((res.data)[i].images.original.url)
-                //     urls.push((res.data)[i].images.original.url)
-                // }
+                const data=res.data
+                 for(var j=0;j<data.length;j++){
+                    //console.log(data[j].images.original.url)
+                     urls.push((res.data)[i].images.original.url)
+                 }
 
-                // giphyUrls.push({"hastag":Trends[i],"Urls":urls})
+                 giphyUrls.push({"hastag":Trends[i],"Urls":urls})
 
            })
        }

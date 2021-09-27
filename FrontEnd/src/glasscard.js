@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import axios from 'axios'
 import { useSpring, animated, config } from 'react-spring';
 
+
+
 const Container = styled(animated.div)`
 display: inline-block;
 padding: 3em;
@@ -55,11 +57,8 @@ const GlassCardTwitter = () => {
          })
 
     }, [])
-    
-    
-    
-    
-    
+     
+
     
     return (
         <Container
