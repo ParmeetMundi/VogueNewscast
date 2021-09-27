@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import profile from './images/back.jpg';
 import styled from 'styled-components';
+import axios from 'axios'
 import { useSpring, animated, config } from 'react-spring';
 
 const Container = styled(animated.div)`
@@ -44,6 +45,22 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 const GlassCardTwitter = () => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1] , config: config.default}))
+    var tweets=[]
+    
+    
+    useEffect(() => {
+          
+         axios.get('http://localhost:8080/Tweets').then((res)=>{
+              tweets=res.data
+         })
+
+    }, [])
+    
+    
+    
+    
+    
+    
     return (
         <Container
             onMouseMove={({clientX: x, clientY: y}) => (set({xys: calc(x, y)}))}
