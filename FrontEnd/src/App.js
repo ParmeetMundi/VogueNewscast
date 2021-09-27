@@ -35,7 +35,7 @@ function App() {
       <p>
       <GlassCardYoutube />
       <li></li>
-      <li></li>
+      {/* <li></li>
       <GlassCardTwitter /> </p>
       <li></li>
       <li></li>
@@ -44,7 +44,7 @@ function App() {
       <li></li>
       <li></li>
       <GlassCardYoutube />
-      </p>
+      </p> */}
       
     </div>
   );
