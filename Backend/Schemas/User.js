@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+import mongoose from 'mongoose'
 
 
 
@@ -30,4 +30,4 @@ const User=new mongoose.Schema({
 })
 
 
-module.exports=User
+export default mongoose.model('User',User)
