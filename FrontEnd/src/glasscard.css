@@ -1,0 +1,10 @@
+.rahul{
+    height: 50vh !important;
+    width: 20vw !important;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.rahul::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}

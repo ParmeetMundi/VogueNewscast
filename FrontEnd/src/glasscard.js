@@ -3,6 +3,8 @@ import profile from './images/back.jpg';
 import styled from 'styled-components';
 import axios from 'axios'
 import { useSpring, animated, config } from 'react-spring';
+import { Timeline, Tweet } from 'react-twitter-widgets';
+import './glasscard.css'
 
 const Container = styled(animated.div)`
 display: inline-block;
@@ -45,7 +47,7 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 const GlassCardTwitter = () => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1] , config: config.default}))
-    var tweets=[]
+    var tweets=[{ids:["1442186834918793225" , "1442186834918793225"]}]
     
     
     useEffect(() => {
@@ -56,10 +58,16 @@ const GlassCardTwitter = () => {
 
     }, [])
     
-    
-    
-    
-    
+    const Tweets=()=>{
+        return (
+        <div className="rahul">
+               {tweets.map((x)=>{
+               return (
+                    x.ids.map((id)=>{return(<Tweet tweetId={id} />) }) 
+                  )
+               }) }
+        </div>)
+    }
     
     return (
         <Container
@@ -70,8 +78,20 @@ const GlassCardTwitter = () => {
             }}
         >
             
-            <StyledH1>Twitter</StyledH1>
-            <StyledH3>Tweet<br/> Likes and Retweets </StyledH3>
+            <StyledH3 >
+                
+                {Tweets()}
+                
+                {/* <Timeline
+                    dataSource={{
+                        sourceType: 'profile',
+                        screenName: 'TwitterDev'
+                    }}
+                    options={{
+                        height: '400'
+                    }} /> */}
+            </StyledH3>
+            {/* <StyledH3>Tweet<br/> Likes and Retweets </StyledH3> */}
         </Container>
     );
 }
