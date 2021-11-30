@@ -6,10 +6,7 @@ import Tweet from '../Schemas/tweets.js'
 const Twitter = () => {
 
     const T = new Twit({
-        consumer_key: "xb9C6jH0JQzc4PhWYo7JCsVub",
-        consumer_secret: "HExBWpRPZLe2cgg1m55YjMZgKbUw6uRA5ahqjn8D2kYFsOlR8h",
-        access_token: "1430817484832075776-o44hhP5hxJuhipAH33mCctiGhcGl0P",
-        access_token_secret: "6zYqwxLXAxWRyJBHu2b0BFYeePcFqkePO81j9LPfis6bT"
+        
     })
     
     getTrends(T)

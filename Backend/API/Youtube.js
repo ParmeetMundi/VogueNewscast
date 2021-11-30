@@ -1,4 +1,4 @@
-const key="AIzaSyBdqNe37lIZQA0kNYRNQpgiyf5FQZ0Io54";
+const key="";
 import {google} from 'googleapis'
 import {youtubeIds} from '../Trends.js'
 

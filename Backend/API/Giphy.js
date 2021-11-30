@@ -4,7 +4,7 @@ import {giphyUrls} from '../Trends.js'
 
 const Giphy=()=>{
 
- const G=giphy('6GkICIMCCRzhrk1R4IjrsRkpfNcJEXWe')
+ const G=giphy('')
 
  getStickers(G)
  
