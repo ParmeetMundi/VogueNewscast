@@ -13,7 +13,8 @@
     "react-spring": "^8.0.27",
     "react-twitter-widgets": "^1.10.0",
     "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "youtube-embed-video": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

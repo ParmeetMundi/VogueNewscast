@@ -3,6 +3,7 @@ import profile from './images/back.jpg';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
 import { Timeline, Tweet } from 'react-twitter-widgets';
+import YoutubeEmbedVideo from "youtube-embed-video";
 
 const Container = styled(animated.div)`
 display: inline-block;
@@ -43,6 +44,19 @@ const StyledH3 = styled.h3`
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
+const vedios=['QHdkC6Kn0Io','9LVTHBfKSVQ','gCvr6uzmM0o','URdMEEgstHA','hcXz24-pXYY','vhMnpNFMDAk','5vcdMXJQebk','zxwCCcgoUoQ','Y4VnT6Q1oss',
+'ecjvUhfSFiY']
+
+const YoutubeVedios=()=>{
+    return (
+    <div className="rahul">
+           {vedios.map((id)=>{
+             
+            return(<YoutubeEmbedVideo width='100%' videoId={id} suggestions={false} />)
+           
+           }) }
+    </div>)
+}
 
 const GlassCardYoutube = () => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1] , config: config.default}))
@@ -55,9 +69,9 @@ const GlassCardYoutube = () => {
             }}
         >
             
-            <StyledH1><div className="rahul">
-                <Tweet tweetId="1442186834918793225" />
-                </div></StyledH1>
+            <StyledH1>
+            {YoutubeVedios()}
+            </StyledH1>
            
         </Container>
     );

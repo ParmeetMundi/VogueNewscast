@@ -56,7 +56,8 @@ const GlassCardGiphy = () => {
         >
             
             <StyledH1><div className="rahul">
-                <Tweet tweetId="1442186834918793225" />
+                <img width='100%' src='https://media3.giphy.com/media/ihSSDIspSwEp2CTT6K/giphy.gif?cid=833fbbc4e3jslzmx93clfiz10henqdjo4n6084bxry748kuc&rid=giphy.gif&ct=g' />
+                
                 </div></StyledH1>
             
         </Container>

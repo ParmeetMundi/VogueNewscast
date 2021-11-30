@@ -21,12 +21,14 @@ const getStickers=async (G)=>{
                 const data=res.data
                  for(var j=0;j<data.length;j++){
                     //console.log(data[j].images.original.url)
-                     urls.push((res.data)[i].images.original.url)
+                     urls.push((res.data)[j].images.original.url)
                  }
 
                  giphyUrls.push({"hastag":Trends[i],"Urls":urls})
+                 
 
            })
+           
        }
    
 }

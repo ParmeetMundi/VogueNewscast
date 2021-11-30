@@ -22,10 +22,12 @@ const Twitter = () => {
 const getTweets=(T)=>{
     try{
 
+
        for(var i=0;i<2;i++){
         T.get('search/tweets',{q:Trends[i].name,result_type:'popular',count:'5'},
         async (err,data,res)=>{
             var tweetIds=[]
+            tweets.length=0
             const Twittertweets=data.statuses
 
              for(var j=0;j<Twittertweets.length;j++){
@@ -52,7 +54,7 @@ const getTrends = (T) => {
         
         var tweets = []
         T.get('trends/place', { id: '23424848' }, (err, data, res) => {
-
+            Trends.length=0
             const tweets = data[0].trends
 
             // const tweets=rawTweets.map(x => {if(franc(x.name)==='eng') return x})
