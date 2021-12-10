@@ -1,10 +1,10 @@
 import { Router } from "express";
 const route=Router()
-import {tweets,giphyUrls} from '../Trends.js'
+import {youtubeIdsGames} from '../Trends.js'
 
 
 route.get('/',(req,res)=>{
-   res.send(tweets)
+   res.send(youtubeIdsGames)
 })
 
 export default route

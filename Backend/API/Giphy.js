@@ -4,7 +4,7 @@ import {giphyUrls} from '../Trends.js'
 
 const Giphy=()=>{
 
- const G=giphy('')
+ const G=giphy(process.env.giphyKey)
 
  getStickers(G)
  
@@ -14,22 +14,28 @@ const Giphy=()=>{
 
 const getStickers=async (G)=>{
 
-       
-       for(var i=0;i<2;i++)
-       {   var urls=[]
-           await G.search({q:Trends[i],limit:'2'},(err,res)=>{
+    giphyUrls.length=0
+   
+    //    for(var i=0;i<3;i++)
+    //    {        
+           await G.trending({limit:'20'}).then((res)=>{
                 const data=res.data
+                var urls=[]
+                console.log(res)
                  for(var j=0;j<data.length;j++){
-                    //console.log(data[j].images.original.url)
+                     
+                    // console.log(res.data[j].url)
                      urls.push((res.data)[j].images.original.url)
-                 }
+                     giphyUrls.push((res.data)[j].images.original.url) 
+                    }   
+                
+                  
 
-                 giphyUrls.push({"hastag":Trends[i],"Urls":urls})
-                 
-
-           })
+           }
+           )
            
-       }
+    //    }
+       
    
 }
 

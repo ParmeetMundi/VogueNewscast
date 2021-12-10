@@ -1,8 +1,10 @@
 var Trends=[]
 var tweets=[]
 var giphyUrls=[]
-var youtubeIds=[]
+var youtubeIdsMusic=[]
+var youtubeIdsGames=[]
 export default Trends
 export {tweets}
 export {giphyUrls}
-export {youtubeIds}
+export {youtubeIdsMusic}
+export {youtubeIdsGames}
