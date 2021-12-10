@@ -30,9 +30,9 @@ console.log(process.env.YoutubeKey)
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("db connected");
-  // Twitter()
-  //Giphy()
-  //Youtube()
+   Twitter()
+   Giphy()
+   Youtube()
   });
 //console.log(__dirname)
 import Signup from './Calls/Signup.js'
