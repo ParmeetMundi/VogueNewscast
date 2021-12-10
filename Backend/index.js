@@ -5,7 +5,9 @@ import Giphy from './API/Giphy.js'
 import Youtube from './API/Youtube.js'
 import dotenv from 'dotenv'
 import path from 'path'
-
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app=express()
 app.use(express.json())
 app.use((req,res,next)=>{
@@ -24,7 +26,7 @@ const mongodbUrl=process.env.DATABASE
 mongoose.connect(mongodbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 const db=mongoose.connection;
 
-//console.log(process.env.YoutubeKey)
+console.log(process.env.YoutubeKey)
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("db connected");
@@ -32,7 +34,7 @@ db.once('open', function() {
   //Giphy()
   //Youtube()
   });
-
+//console.log(__dirname)
 import Signup from './Calls/Signup.js'
 app.use('/Signup',Signup)
 
