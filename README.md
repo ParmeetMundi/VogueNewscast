@@ -13,7 +13,7 @@ Giphy Api is used
 # For Trending Music and Games 
 Youtube Api is Used
 
-<img src="D:\reacttut\Vogue Newscast\memes.png">
+<img src="https://github.com/ParmeetMundi/VogueNewscast/blob/master/memes.png">
 
 
 
