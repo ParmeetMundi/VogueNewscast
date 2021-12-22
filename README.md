@@ -13,6 +13,9 @@ Giphy Api is used
 # For Trending Music and Games 
 Youtube Api is Used
 
+<img src="D:\reacttut\Vogue Newscast\memes.png">
+
+
 
 
 
