@@ -1,23 +1,16 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 import axios from 'axios';
 import { getAuth } from '@firebase/auth';
+import { AuthContext } from './CurrentAuth';
 
 
 
 const Memes = () => {
     
-    const [urls, seturls] = useState([])
+    
+    
     const auth=getAuth();
-    useEffect(() => {
-        if(auth.currentUser!=null) { axios.get("/GetGiphy").then(res=>{
-             urls.length=0
-             seturls(res.data)
-          }).catch((err)=>{
-              alert(err)
-          })
-        }
-    }, [])
-
+    const {urls} = useContext(AuthContext)
 
     const memes=()=>{
         return (<div className="curr_aff_main">

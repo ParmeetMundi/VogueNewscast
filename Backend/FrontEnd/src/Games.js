@@ -1,33 +1,21 @@
-import React,{useEffect,useState} from 'react';
-import axios from 'axios';
-import YoutubeEmbedVideo from "youtube-embed-video";
+import React,{useEffect,useState,useContext} from 'react';
 import { getAuth } from '@firebase/auth';
-
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import './youtubeEmbed.css'
+import { AuthContext } from './CurrentAuth';
 
 
 const Games = () => {
-    const [Ids, setIds] = useState([])
+    const {gamesIds} = useContext(AuthContext)
     const auth=getAuth()
-
-    useEffect(() => {
-         if(auth.currentUser!=null)  {
-              axios.get("/GetGames").then(res=>{
-            setIds(res.data)
-            console.log(Ids)
-          }).catch((err)=>{
-              alert(err)
-          })
-        }
-    }, [])
-
-
+   
     const games=()=>{
         return (<div className="curr_aff_main">
-           {Ids.map((id)=>{
+           {gamesIds.map((id)=>{
 
              return(
                  <div className="y_div">
-                 <YoutubeEmbedVideo width='100%' videoId={id} suggestions={false} />
+                 <LiteYouTubeEmbed width='100%' id={id} title='' />
                  </div>)
             }) 
             }

@@ -1,12 +1,13 @@
 export const MenuItems = [
-    {
-        title: 'Current Affairs',
-        url: '/currentAffairs',
-        cName: 'nav-links'
-    },
+    
     {
         title: 'Memes',
         url: '/Memes',
+        cName: 'nav-links'
+    },
+    {
+        title: 'Current Affairs',
+        url: '/currentAffairs',
         cName: 'nav-links'
     },
     {

@@ -1,31 +1,17 @@
-import axios from 'axios';
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState,useContext} from 'react';
+import { AuthContext } from './CurrentAuth';
 import GlassCardTwitter from './glasscard';
 import GlassCardGiphy from './glasscardgiphy';
 import GlassCardYoutube from './glasscardyoutube';
+import './Home.css'
 
 const Home = () => {
-    const [tweets, settweets] = useState([])
-    const [urls, seturls] = useState([])
-    const [ids, setids] = useState([])
-   
-    useEffect(() => {
-          axios.get("/").then(res=>{
-             urls.length=0
-             settweets(res.data[0])
-             seturls(res.data[1])
-             setids(res.data[2])
-          }).catch((err)=>{
-              alert(err)
-          })
-    }, [])
+    const {Hometweets,Homeurls,Homeids} = useContext(AuthContext)
 
-    return <div>
-      <p>
-      <GlassCardTwitter tweets={tweets}/>
-      <GlassCardGiphy urls={urls}/>
-      <GlassCardYoutube ids={ids}/>
-      </p>
+    return <div className='Home'>
+      <GlassCardTwitter tweets={Hometweets}/>
+      <GlassCardGiphy urls={Homeurls}/>
+      <GlassCardYoutube ids={Homeids}/>
     </div>;
 }
 

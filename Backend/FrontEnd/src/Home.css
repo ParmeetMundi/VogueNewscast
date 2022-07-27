@@ -1,0 +1,40 @@
+
+@media only screen and (max-width: 1200px) {
+    .Home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   .container{
+    width: 90vw !important;
+   }
+   .containerTweet{
+    max-width: 550px;
+    width: 90vw;
+   }
+  }
+  .container{
+    width: 30vw;
+   }
+  
+   .containerTweet{
+    max-width: 550px;
+   }
+
+  
+  .fit{
+    width:100%;
+    height: 40vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.fit::-webkit-scrollbar {
+  display: none;
+}
+
+
+.body{
+    height: 90vh;
+}

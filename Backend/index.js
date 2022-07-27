@@ -51,7 +51,7 @@ import GetGames from './Calls/GetGames.js'
 app.use('/GetGames',GetGames)
 
 import GetHome from './Calls/GetHome.js'
-app.use('/',GetHome)
+app.use('/Home',GetHome)
 
 if ( process.env.NODE_ENV == "production"){
 

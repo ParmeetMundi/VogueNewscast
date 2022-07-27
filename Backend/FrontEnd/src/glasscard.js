@@ -22,20 +22,7 @@ cursor: pointer;
 margin: 2em;
 `;
 
-/*const StyledImg = styled.img`
-    width: 200px;
-    height: auto;
-    border: 2px solid #000;
-    border-radius: 50%;
-`;
-<StyledImg src={profile} />
-FOR IMAGE */
 
-const StyledH1 = styled.h1`
-    line-heright: 1.5;
-    letter-spacing: 1.5;
-    font-family: "Gilroy";
-`;
 
 const StyledH3 = styled.h3`
     line-heright: 1.5;
@@ -52,14 +39,14 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 const GlassCardTwitter = (params) => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1] , config: config.default}))
-    var tweets=[""]
     
     
     
     
     const Tweets=()=>{
+        
         return (
-        <div className="rahul">
+        <div className="fit">
                {params.tweets.map((id)=>{
                return (
                 <Tweet tweetId={id} />
@@ -75,6 +62,7 @@ const GlassCardTwitter = (params) => {
             style={{
                 transform: props.xys.interpolate(trans)
             }}
+            className="containerTweet"
         >
             
             <StyledH3 >  

@@ -49,10 +49,10 @@ const GlassCardGiphy = (params) => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1] , config: config.default}))
     
     const memes=()=>{
-        return (<div >
+        return (<div  className='fit'>
             {params.urls.map((x)=>{
               return (               
-              <img  src={x} />)
+              <img className='fitImg' src={x} />)
             })}
         </div>);
     }
@@ -65,12 +65,12 @@ const GlassCardGiphy = (params) => {
             style={{
                 transform: props.xys.interpolate(trans)
             }}
+          className="container"
         >
             
-            <StyledH1><div className="rahul">
+            <StyledH3 >
                 {memes()}
-                
-            </div></StyledH1>
+            </StyledH3>
             
         </Container>
     );

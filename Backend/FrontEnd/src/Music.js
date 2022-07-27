@@ -1,32 +1,21 @@
-import React,{useEffect,useState} from 'react';
-import axios from 'axios';
-import YoutubeEmbedVideo from "youtube-embed-video";
+import React,{useEffect,useState,useContext} from 'react';
 import { auth } from './firebase';
-
-
+import { AuthContext } from './CurrentAuth';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import './youtubeEmbed.css'
 
 
 const Music = () => {
-    const [Ids, setIds] = useState([])
-
-    useEffect(() => {
-          if(auth.currentUser!=null){axios.get("/GetMusic").then(res=>{
-             Ids.length=0
-             setIds(res.data)
-            // console.log(Ids)
-          }).catch((err)=>{
-              alert(err)
-          })}
-    })
-
+    
+    const {musicIds} = useContext(AuthContext)
 
     const music=()=>{
         return (<div className="curr_aff_main">
-           {Ids.map((id)=>{
+           {musicIds.map((id)=>{
                
             return(
                  <div className="y_div">
-                 <YoutubeEmbedVideo width='100%' videoId={id} suggestions={false} />
+                 <LiteYouTubeEmbed width='100%' id={id} title='' />
                  </div>)
             }) }
         </div>);

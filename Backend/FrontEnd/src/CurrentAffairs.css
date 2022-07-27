@@ -22,11 +22,16 @@ img{
     flex-wrap: wrap;
     padding: 10px;
     justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
 }
 .indv_tweet{
-    margin: 20px;
-
+    margin: 20px ;
+    max-width: 550px;
+    height: fit-content;
 }
+
+
 .body {
     background-image: url("./images/background.jpg") !important;
     background-size: cover;
