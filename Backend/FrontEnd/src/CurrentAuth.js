@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 
 export const CurrentAuth = ({ children }) => {
-    const url="http://localhost:8080"
+    
     const [currentUser, setCurrentUser] = useState("null");
     const [urls, seturls] = useState([])
     const [musicIds, setmusicIds] = useState([])
@@ -18,7 +18,7 @@ export const CurrentAuth = ({ children }) => {
 
    const call=()=>{
      
-    axios.get(url+"/Home").then(res=>{
+    axios.get("/Home").then(res=>{
         urls.length=0
         setHometweets(res.data[0])
         setHomeurls(res.data[1])
@@ -31,7 +31,7 @@ export const CurrentAuth = ({ children }) => {
 
 
     if(auth.currentUser!=null) { 
-        axios.get(url+"/GetGiphy").then(res=>{
+        axios.get("/GetGiphy").then(res=>{
         urls.length=0
         seturls(res.data)
 
@@ -40,20 +40,20 @@ export const CurrentAuth = ({ children }) => {
      })
 
      
-     axios.get(url+"/GetMusic").then(res=>{
+     axios.get("/GetMusic").then(res=>{
         musicIds.length=0
         setmusicIds(res.data)
      }).catch((err)=>{
          alert(err)
      })
 
-     axios.get(url+"/GetGames").then(res=>{
+     axios.get("/GetGames").then(res=>{
         setgamesIds(res.data)
       }).catch((err)=>{
           alert(err)
       })
 
-      axios.get(url+"/Tweets").then(res=>{
+      axios.get("/Tweets").then(res=>{
         settweetIds(res.data)
       }).catch((err)=>{
          alert(err)
